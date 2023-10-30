@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="galeria" style="margin-left: 5em">
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            {% for field in form.visible_fields %}
+                <div style="margin-bottom: 10px;" class="col-12 col-lg-12">
+                    <label style="color:#7B78E5; margin-bottom: 5px;" for="{{ field.id_for_label }}">{{field.label}}</label><br>
+                    {{field}}
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+            <br><button class="btn btn-success col-12" style="padding: top 5px;" type="submit"">Log On</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
