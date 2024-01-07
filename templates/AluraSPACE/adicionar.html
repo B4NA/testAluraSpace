@@ -2,18 +2,18 @@
 {% load static %}
 {% block content %}
 <section class="galeria" style="margin-left: 5em">
-    <form action="{% url 'login' %}" method="POST">
+    <form action="{% url 'adicionar' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
             {% for field in form.visible_fields %}
                 <div style="margin-bottom: 10px;" class="col-12 col-lg-12">
                     <label style="color:#7B78E5; margin-bottom: 5px;" for="{{ field.id_for_label }}">{{field.label}}</label><br>
-                    {{field}}
+                    {{ field }}
                 </div>
             {% endfor %}
         </div>
         <div>
-            <br><button class="btn btn-success col-12" style="padding: top 5px;" type="submit"">Log On</button>
+            <br><button class="btn btn-success col-12" type="submit">Adicionar</button>
         </div>
     </form>
 </section>

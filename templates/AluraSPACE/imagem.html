@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
 <section class="conteudo">
@@ -14,6 +14,9 @@
                     <p class="imagem__titulo">{{ photos.nome }}</p>
                     <p class="imagem__descricao">{{ photos.legenda }}</p>
                     <p class="imagem__texto">{{ photos.description }}</p>
+                </div>
+                <div>
+                    <a href="{% url 'editar' photos.id 0 %}"><button class="btn btn-success col-12">Editar</button></a>
                 </div>
             </div>
         </div>
